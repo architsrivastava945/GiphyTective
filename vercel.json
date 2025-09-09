@@ -4,24 +4,12 @@
     {
       "src": "index.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/style.css",
-      "dest": "/style.css"
-    },
-    {
       "src": "/(.*)",
-      "dest": "index.js",
-      "headers": {
-        "Content-Security-Policy": "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://media0.giphy.com https://media1.giphy.com https://media2.giphy.com https://media3.giphy.com https://media4.giphy.com data:; script-src 'self' 'unsafe-inline';"
-      }
+      "dest": "index.js"
     }
   ]
 }
-
