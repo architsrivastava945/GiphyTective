@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@keyframes bubble-flow {
+    0% { background-position: 0% 50%, 50% 100%, 100% 50%; }
+    50% { background-position: 100% 50%, 50% 0%, 0% 50%; }
+    100% { background-position: 0% 50%, 50% 100%, 100% 50%; }
+}
+
+:root {
+    --bubble-gradient: radial-gradient(circle at 0% 50%, #ff00cc 0%, rgba(255, 255, 255, 0) 40%),
+                       radial-gradient(circle at 50% 100%, #3300ff 0%, rgba(255, 255, 255, 0) 40%),
+                       radial-gradient(circle at 100% 50%, #00ffff 0%, rgba(255, 255, 255, 0) 40%);
+}
+
+body {
+    background-color: #121212;
+    color: #EAEAEA;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+header {
+    padding: 40px 20px 20px;
+}
+
+/* ADDED: Styling for the header link */
+.header-link {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 4rem;
+    background: var(--bubble-gradient);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bubble-flow 20s ease-in-out infinite;
+    display: inline-block; /* Helps with link behavior */
+}
+
+.search-wrapper {
+    margin: 40px auto;
+    padding: 4px; 
+    width: 90%;
+    max-width: 800px;
+    border-radius: 50px;
+    background: var(--bubble-gradient);
+    background-size: 300% 300%;
+    animation: bubble-flow 20s ease-in-out infinite;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    border-radius: 46px;
+    overflow: hidden;
+    background-color: #ffffff; 
+}
+
+input {
+    flex-grow: 1; 
+    padding: 20px 25px;
+    border: none;
+    font-size: 1.1rem;
+    background-color: transparent; 
+    color: #212121;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    padding: 20px 35px;
+    color: black;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--bubble-gradient);
+    background-size: 300% 300%;
+    animation: bubble-flow 20s ease-in-out infinite;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+main {
+    padding: 20px;
+}
+
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gif-item {
+    position: relative; /* ADDED: Needed for positioning the download button */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.gif-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ADDED: Styling for the download button */
+.download-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.gif-item:hover .download-btn {
+    opacity: 1; /* Appears on hover */
+}
+
+.download-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+

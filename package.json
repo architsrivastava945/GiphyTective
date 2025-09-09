@@ -1,0 +1,30 @@
+{
+  "name": "giphytective",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/architsrivastava945/GiphyTective#readme",
+  "bugs": {
+    "url": "https://github.com/architsrivastava945/GiphyTective/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/architsrivastava945/GiphyTective.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
